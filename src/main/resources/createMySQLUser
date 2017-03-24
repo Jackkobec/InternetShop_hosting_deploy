@@ -1,0 +1,7 @@
+
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+
+GRANT ALL PRIVILEGES ON internet_shop . * TO 'admin'@'localhost';
+
+DROP USER 'admin'@'localhost';
