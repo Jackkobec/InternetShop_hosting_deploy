@@ -12,7 +12,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.CharArrayWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * <p>UserUpdateCommand class execute command for update user info.
@@ -52,27 +54,44 @@ public class UserUpdateCommand implements ICommand {
         User currentUserInSystem = (User) session.getAttribute(CURRENT_USER_IN_SYSTEM);
 
         final String newName = request.getParameter(NAME);
+        LOGGER.info("newName " + newName);
         final String language = new LanguageService()
                 .getLanguageBySelect(Integer.parseInt(request.getParameter(LANGUAGE_SELECTION)));
-
+        LOGGER.info("language " + language);
         User forUpdate = new User(currentUserInSystem.getId(), currentUserInSystem.getEmail(),
                 currentUserInSystem.getPassword(), newName, language, currentUserInSystem.getUserType());
+        LOGGER.info("forUpdate " + forUpdate);
+        LOGGER.info("currentUserInSystem.getId() " + currentUserInSystem.getId());
+//        try {
 
-        if (iClientService.updateUser(forUpdate).equals(currentUserInSystem.getId())) {
-
-            request.setAttribute(MAIN_PAGE_ALERT_FLAG, true);
-            request.setAttribute(MAIN_PAGE_ALERT_CLASS, ALERT_ALERT_SUCCESS_CLASS);
-            request.setAttribute(MAIN_PAGE_ALERT_MESSAGE, "User info updated.");
-            session.setAttribute(CURRENT_USER_IN_SYSTEM, forUpdate);
-            session.setAttribute(SELECTED_LOCALE, language);
-            LOGGER.info("User info updated.");
-
-            return mainPage;
-        } else {
-            request.setAttribute(ERROR_INFO, "User info not updated.");
-            LOGGER.error("User info not updated.");
-
-            return errorPage;
+        try{
+            LOGGER.info("iClientService.updateUser(forUpdate) " + iClientService.updateUser(forUpdate));
+        }catch (
+                NullPointerException ex){
+            LOGGER.error("iClientService.updateUser(forUpdate) " + ex);
         }
+            if (iClientService.updateUser(forUpdate).equals(currentUserInSystem.getId())) {
+//        if (true) {
+
+                request.setAttribute(MAIN_PAGE_ALERT_FLAG, true);
+                request.setAttribute(MAIN_PAGE_ALERT_CLASS, ALERT_ALERT_SUCCESS_CLASS);
+                request.setAttribute(MAIN_PAGE_ALERT_MESSAGE, "User info updated.");
+                session.setAttribute(CURRENT_USER_IN_SYSTEM, forUpdate);
+                session.setAttribute(SELECTED_LOCALE, language);
+                LOGGER.info("User info updated.");
+
+                return mainPage;
+
+            } else {
+                request.setAttribute(ERROR_INFO, "User info not updated.");
+                LOGGER.error("User info not updated.");
+
+                return errorPage;
+            }
+//        } catch (NullPointerException ex) {
+//
+//            LOGGER.error(ex.getStackTrace());
+//        }
+//        return errorPage;
     }
 }

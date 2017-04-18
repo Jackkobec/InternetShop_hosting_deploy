@@ -27,6 +27,10 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 </head>
 
 <body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="view.components/js/bootstrap.min.js"></script>
 
 <div class="container">
 
@@ -102,10 +106,10 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 </div>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="view.components/js/bootstrap.min.js"></script>
+<%--<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->--%>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
+<%--<!-- Include all compiled plugins (below), or include individual files as needed -->--%>
+<%--<script src="view.components/js/bootstrap.min.js"></script>--%>
 <!-- Добавляем свой скрипт -->
 <script src="view.components/js/forlogin.js"></script>
 <!-- Добавляем свой скрипт -->

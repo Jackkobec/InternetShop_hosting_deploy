@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ page isELIgnored="false" %>  РАЗРЕШЕНИЕ БЗАТЬ ЕКСПРЕШЕН ЛЕНГВИЧ--%>
 <%@ page isELIgnored="false" %>
 
+<%--ЭТО ПЕРЕМЕННАЯ, КОТОРАЯ СОДЕРЖИТ В СЕБЕ ИМЯ ПРИЛОЖЕНИЯ(ИМЯ WAR-ника типо InternetShop-1.0-SNAPSHOT),
+НУЖНО ДЛЯ ПРАВИЛЬНОЙ РАБОТЫ ОТНОСИТЕЛЬНЫХ ПУТЕЙ
+Например:
+<link type="text/css" href="/${APP_NAME}/view.components/css/styles.css" rel="stylesheet">--%>
+<c:set var="APP_NAME" value="InternetShop-1.0-SNAPSHOT"/>
 
 <script language="javascript">
     // ENTER TEXT BELOW. CAN *NOT* INCLUDE NORMAL HTML CODE.

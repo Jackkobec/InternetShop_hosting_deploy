@@ -24,9 +24,13 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
     <title>Registration Form</title>
 
     <!-- Добавляем свой стиль -->
-    <link type="text/css" href="view.components/css/styles.css" rel="stylesheet">
+    <link type="text/css" href="/${APP_NAME}/view.components/css/styles.css" rel="stylesheet">
 </head>
 <body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/${APP_NAME}/view.components/js/bootstrap.min.js"></script>
 
 <div class="container">
 
@@ -157,13 +161,13 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
     </div><!-- /.modal -->
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="view.components/js/bootstrap.min.js"></script>
+<%--<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->--%>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
+<%--<!-- Include all compiled plugins (below), or include individual files as needed -->--%>
+<%--<script src="/${APP_NAME}/view.components/js/bootstrap.min.js"></script>--%>
 <!-- Добавляем свой скрипт -->
-<script src="view.components/js/forregistration.js"></script>
+<script src="/${APP_NAME}/view.components/js/forregistration.js"></script>
 <!-- Добавляем свой скрипт -->
-<script src="view.components/js/fornotifications.js"></script>
+<script src="/${APP_NAME}/view.components/js/fornotifications.js"></script>
 </body>
 </html>

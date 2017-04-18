@@ -18,6 +18,7 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 <!DOCTYPE html>
 <head>
     <jsp:include page="bootstrap-meta.jsp"/>
+
     <%--
 <jsp:include page="bootstrap-meta.jsp"/>
 Действие включения используется только в случаях очень частого обновления содержания и тогда,
@@ -25,16 +26,20 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
     <title>Internet Shop main page.</title>
 
     <!-- Добавляем свой стиль -->
-    <link type="text/css" href="view.components/css/styles.css" rel="stylesheet">
+    <link type="text/css" href="/${APP_NAME}/view.components/css/styles.css" rel="stylesheet">
 
     <!-- Добавляем свой стиль user profile -->
-    <link type="text/css" href="view.components/css/user_profile.css" rel="stylesheet">
+    <link type="text/css" href="/${APP_NAME}/view.components/css/user_profile.css" rel="stylesheet">
 
     <!-- Добавляем свой стиль header picture style -->
-    <link type="text/css" href="view.components/css/header_style.css" rel="stylesheet">
+    <link type="text/css" href="/${APP_NAME}/view.components/css/header_style.css" rel="stylesheet">
 </head>
 
 <body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/${APP_NAME}/view.components/js/bootstrap.min.js"></script>
 
 <%--Test image--%>
 <%--<div align="center">3<img src="http://www.sunhome.ru/i/wallpapers/67/terminator-2-oboi.1920x1080.jpg" width="100%" height="100%"></div>--%>
@@ -59,12 +64,13 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
         <div class="header">
             <ul>
                 <li>
-                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></div>
-                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"></span><fmt:message key="logout" bundle="${rb}"/></a></div>
+                    <%--<div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></div>--%>
+                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></span></div>
+                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"><fmt:message key="logout" bundle="${rb}"/></a></div>
                 </li>
                 <li2>
-                    <div class="row"><span class="glyphicon glyphicon-user mycolorspan"></div>
-                    <div class="row"><a data-toggle="modal" href="#myModalUserProfile"></span><fmt:message key="user" bundle="${rb}"/>
+                    <div class="row"><span class="glyphicon glyphicon-user mycolorspan"></span></div>
+                    <div class="row"><a data-toggle="modal" href="#myModalUserProfile"><fmt:message key="user" bundle="${rb}"/>
                         <br>${sessionScope.currentUserInSystem.email}</a></div>
                 </li2>
 
@@ -81,13 +87,13 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
                     </c:otherwise>
                 </c:choose>
                 <li>
-                    <div class="row"><span class="glyphicon glyphicon-shopping-cart ${spanClass}"></div>
+                    <div class="row"><span class="glyphicon glyphicon-shopping-cart ${spanClass}"></span></div>
                     <div class="row"><a data-toggle="modal" href="#myModal"></span><fmt:message key="cart" bundle="${rb}"/>${cartText}</a></div>
                 </li>
 
                 <c:if test="${currentUserInSystem.getUserType() == 'ADMIN'}">
                     <li>
-                        <div class="row"><span class="glyphicon glyphicon-flash mycolorspan-red"></div>
+                        <div class="row"><span class="glyphicon glyphicon-flash mycolorspan-red"></span></div>
                         <div class="row"><a data-toggle="modal" href="#myAdminModal"></span><fmt:message key="admin" bundle="${rb}"/></a></div>
                     </li>
                 </c:if>
@@ -860,14 +866,14 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 <%--/Slider Products--%>
 <%--/GLOBAL BLOCK. SLIDER PRODUCTS TOP CAROUSEL--%>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<%--<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->--%>
+<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
 
 <!-- Добавляем свой скрипт -->
 <script src="view.components/js/tether.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="view.components/js/bootstrap.min.js"></script>
+<%--<!-- Include all compiled plugins (below), or include individual files as needed -->--%>
+<%--<script src="view.components/js/bootstrap.min.js"></script>--%>
 <!-- Добавляем свой скрипт -->
 <script src="view.components/js/formain_fixed_header_elements.js"></script>
 <!-- Добавляем свой скрипт -->

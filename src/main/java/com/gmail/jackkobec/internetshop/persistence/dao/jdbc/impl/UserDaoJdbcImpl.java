@@ -6,10 +6,7 @@ import com.gmail.jackkobec.internetshop.persistence.model.User;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -334,7 +331,8 @@ public class UserDaoJdbcImpl implements UserDao {
         }
 
         connection = getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
+        //Statement.RETURN_GENERATED_KEYS - чтобы избежать SQLException при возвращении ключеей в return resultSet.getInt(1);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery, Statement.RETURN_GENERATED_KEYS)) {
 
             preparedStatement.setString(1, entity.getEmail());
             preparedStatement.setString(2, entity.getPassword());
@@ -346,12 +344,14 @@ public class UserDaoJdbcImpl implements UserDao {
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
 
             while (resultSet.next()) {
+                LOGGER.info("return resultSet.getInt(1); " + resultSet.getInt(1));
                 return resultSet.getInt(1);
             }
-
+            LOGGER.info("entity.getId(); " + entity.getId());
             return entity.getId();
 
         } catch (SQLException e) {
+            LOGGER.error("User not updated " + e);
             e.printStackTrace();
             return null;
         } finally {

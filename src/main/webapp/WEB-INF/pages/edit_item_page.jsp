@@ -64,8 +64,8 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
         <div class="header">
             <ul>
                 <li>
-                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></div>
-                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"></span><fmt:message key="logout" bundle="${rb}"/></a></div>
+                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></span></div>
+                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"><fmt:message key="logout" bundle="${rb}"/></a></div>
                 </li>
                 <li2>
                     <div class="row"><span class="glyphicon glyphicon-user mycolorspan"></div>
