@@ -40,6 +40,11 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 
     <!-- Добавляем свой стиль header picture style -->
     <link type="text/css" href="view.components/css/header_style.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="view.components/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -62,12 +67,12 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
         <div class="header">
             <ul>
                 <li>
-                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></div>
-                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"></span><fmt:message key="logout" bundle="${rb}"/></a></div>
+                    <div class="row"><span class="glyphicon glyphicon-off mycolorspan-red"></span></div>
+                    <div class="row"><a data-toggle="modal" href="#myModalLogOut"><fmt:message key="logout" bundle="${rb}"/></a></div>
                 </li>
                 <li2>
-                    <div class="row"><span class="glyphicon glyphicon-user mycolorspan"></div>
-                    <div class="row"><a data-toggle="modal" href="#myModalUserProfile"></span><fmt:message key="user" bundle="${rb}"/>
+                    <div class="row"><span class="glyphicon glyphicon-user mycolorspan"></span></div>
+                    <div class="row"><a data-toggle="modal" href="#myModalUserProfile"><fmt:message key="user" bundle="${rb}"/>
                         <br>${sessionScope.currentUserInSystem.email}</a></div>
                 </li2>
 
@@ -1321,20 +1326,18 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 <%--/GLOBAL BLOCK. CHOOSEN CATEGORY ITEMS TWO CAROUSELS--%>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<%--not used--%>
+<%--<!-- Добавляем свой скрипт -->--%>
+<%--<script src="view.components/js/tether.min.js"></script>--%>
+
 
 <!-- Добавляем свой скрипт -->
-<script src="../../view.components/js/tether.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../view.components/js/bootstrap.min.js"></script>
+<script src="view.components/js/formain_fixed_header_elements.js"></script>
 <!-- Добавляем свой скрипт -->
-<script src="../../view.components/js/formain_fixed_header_elements.js"></script>
-<!-- Добавляем свой скрипт -->
-<script src="../../view.components/js/for_user_profile.js"></script>
+<script src="view.components/js/for_user_profile.js"></script>
 <!-- Добавляем свой скрипт for tooltips -->
-<script src="../../view.components/js/for_item_management_page.js"></script>
+<script src="view.components/js/for_item_management_page.js"></script>
 <!-- Добавляем свой скрипт -->
 <script src="view.components/js/forlogin.js"></script>
 

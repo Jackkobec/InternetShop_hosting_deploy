@@ -24,13 +24,13 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 
     <!-- Добавляем свой стиль -->
     <link type="text/css" href="view.components/css/styles.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="view.components/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="view.components/js/bootstrap.min.js"></script>
 
 <div class="container">
 

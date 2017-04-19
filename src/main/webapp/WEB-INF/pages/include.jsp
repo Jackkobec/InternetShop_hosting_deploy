@@ -7,7 +7,7 @@
 НУЖНО ДЛЯ ПРАВИЛЬНОЙ РАБОТЫ ОТНОСИТЕЛЬНЫХ ПУТЕЙ
 Например:
 <link type="text/css" href="/${APP_NAME}/view.components/css/styles.css" rel="stylesheet">--%>
-<c:set var="APP_NAME" value="InternetShop-1.0-SNAPSHOT"/>
+<c:set var="APP_NAME" value="WeaponsShop"/>
 
 <script language="javascript">
     // ENTER TEXT BELOW. CAN *NOT* INCLUDE NORMAL HTML CODE.

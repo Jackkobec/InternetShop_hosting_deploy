@@ -869,8 +869,9 @@ In the Java: request.setAttribute("selectedLocale", "en_EN");
 <%--<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->--%>
 <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--%>
 
-<!-- Добавляем свой скрипт -->
-<script src="view.components/js/tether.min.js"></script>
+<%--not used--%>
+<%--<!-- Добавляем свой скрипт -->--%>
+<%--<script src="view.components/js/tether.min.js"></script>--%>
 
 <%--<!-- Include all compiled plugins (below), or include individual files as needed -->--%>
 <%--<script src="view.components/js/bootstrap.min.js"></script>--%>
